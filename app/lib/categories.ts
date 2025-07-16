@@ -1,17 +1,17 @@
 import categories from "../data/categories.json"
 import { Category } from "../types/types"
-export function getAllCategories():Category[] {
+export async function getAllCategories():Promise<Category[]> {
     return categories
 }
 
-export function getCategoryBySlug(slug:string) {
-    const category = categories.find((cate) => cate.slug === slug)
+export async function  getCategoryBySlug(slug:string):Promise<Category> {
+    const category = await categories.find((cate) => cate.slug === slug)
     if(category)
         return category
     throw new Error(`the slug ${slug} was not found`)
 }
 
-export function getDisplayNameFromSlug(slug:string) {
-    const category:Category = getCategoryBySlug(slug)
+export async function getDisplayNameFromSlug(slug:string):Promise<string> {
+    const category:Category = await getCategoryBySlug(slug)
     return category.displayName
 }
