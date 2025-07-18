@@ -7,7 +7,7 @@ const modelsNames: Model[] = await getAllModels()
 export default function ModelsListPage() {
     const modelsNamesMap: JSX.Element[] = modelsNames.map(model => <ModelCard 
         key={model.id}
-        id = {model.id}
+        zeft = {model.id}
         name={model.name}
         description = {model.description}
         category = {model.category}

@@ -7,9 +7,10 @@ export default function NavBar() {
             <span>
               <Link href="/">printforge</Link>
             </span>
-            <div className='flex gap-8'>
-              <Link href='/3d-models' className='uppercase' >3d models</Link>
-              <Link href="/about" className='text-orange-400 border-b-2 border-b-orange-100 uppercase'>
+            <div className='flex gap-8 uppercase'>
+              <Link href='/3d-models' >3d models</Link>
+              <Link href='/3d-models/categories'>categories</Link>
+              <Link href="/about" className='text-orange-400 border-b-2 border-b-orange-100'>
                 about
               </Link>
             </div>
