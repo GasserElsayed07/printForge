@@ -1,8 +1,24 @@
+import ModelCard from "@/app/components/modelCard"
 import { getDisplayNameFromSlug } from "@/app/lib/categories"
+import { getModels } from "@/app/lib/models"
 
-export default function CategoriePage({ params }: any) {
-    console.log(params)
+import { ReactNode } from "react"
+
+export default async function CategoriePage({ params }: any) {
+    let filteredModels
+    let filteredMap
+    filteredModels = await getModels(params.categoryName)
+    filteredMap = filteredModels.map(model => <ModelCard
+        key={model.id}
+        zeft={model.id}
+        name={model.name}
+        description={model.description}
+        category={model.category}/>)
+    
+    console.log('Last segment:', params.slug)
     return (
-        <h1>{getDisplayNameFromSlug(params.categoryName)} </h1>
+        <section className="flex flex-col items-center" >
+            {filteredMap}
+        </section>
     )
 }

@@ -13,7 +13,7 @@ export default function CategNavBar() {
     )
     return (
         <div className="flex flex-col gap-3 pl-16 justify-center uppercase tracking-wide sticky top-[58px]  h-[calc(100vh-64px)]">
-            <NavLink href="" children="All" isActive={usePathname() === "/3d-models/categories"}/>
+            <NavLink href="/3d-models" children="All" isActive={usePathname() === "/3d-models"}/>
             {nav}
         </div>
     )

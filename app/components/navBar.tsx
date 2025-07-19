@@ -12,7 +12,7 @@ export default function NavBar() {
               <Link href="/">printforge</Link>
             </span>
             <div className='flex gap-8 uppercase'>
-              <NavLink href='/3d-models' children="3d models" isActive={pathName === '/3d-models'}/>
+              <NavLink href='/3d-models' children="3d models" isActive={pathName.startsWith("/3d-models") }/>
               <NavLink href='/3d-models/categories' children="categories" isActive={pathName === '/3d-models/categories'}/>
               <NavLink href="/about"  children="about" isActive={pathName === "/about"}/>
             </div>
